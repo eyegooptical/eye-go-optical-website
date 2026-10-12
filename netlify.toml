@@ -7,7 +7,4 @@
   to = "/.netlify/functions/contact"
   status = 200
 
-[[redirects]]
-  from = "/api/reviews"
-  to = "/.netlify/functions/reviews"
-  status = 200
+
