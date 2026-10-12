@@ -1,16 +1,16 @@
-# Eye Go Optical redesign
+# Eye Go Optical website
 
-Open `index.html` in a browser. The static multi-page site uses `multi.css` and `script.js` and has no build step.
+Static multi-page website. Open index.html from a local web server or deploy this folder to Netlify. Styles are in styles.css and multi.css; shared browser behavior is in script.js.
 
 ## Pages
 
-Home, About, Services, Accessibility, School Screenings, Eyewear & Brands, Insurance, Financing, Book Appointment, Contact, Testimonials, and Invoice Help. See [SITE_AUDIT.md](SITE_AUDIT.md) for the source inventory, architecture, and licensed image credits.
+Home, About, Services, Accessibility, School Screenings, Eye Go International, Eyewear & Brands, Insurance, Financing, Book Appointment, Contact, and Google Reviews.
 
 ## Integrations
 
-- The dedicated Financing page loads the Cherry widget configuration supplied by the user.
-- The dedicated Book Appointment page embeds `https://eyegooptical4q07.setmore.com` and includes a direct-link fallback.
-- Wix Invoices remain the staff-side invoice workflow. The public Invoice Help page directs each customer to the unique link in their invoice message; it does not expose invoices or collect payment data.
-- The Contact page and homepage include a responsive Google Maps embed and directions link.
+- Cherry financing and Setmore scheduling retain the owner-provided embeds.
+- Contact messages use the Netlify function at /api/contact and Resend; configure RESEND_API_KEY and a verified CONTACT_FROM_EMAIL. The recipient is info@eyegooptical.com.
+- Google reviews are fetched server-side from Google Places. Configure GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID. Until configured, the reviews page links to the Google business profile.
+- No public invoice feature is included.
 
-Before launch, confirm which original Wix photo is the storefront, add verified hours and email if desired, and check that the Cherry and Setmore providers allow embeds on the production domain.
+Contact delivery and live Google review retrieval are inactive until the hosting environment has the required credentials.
