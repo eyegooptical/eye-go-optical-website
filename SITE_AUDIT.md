@@ -1,15 +1,15 @@
 # Eye Go Optical site implementation notes
 
-Static multi-page HTML/CSS/JavaScript site; no package manager or build step is present. A Netlify Function provides server-side contact delivery.
+Static multi-page HTML/CSS/JavaScript site deployed to GitHub Pages with a GitHub Actions workflow.
 
 ## Integrations and configuration
 
 - Setmore appointment booking and Cherry financing remain embedded as supplied by the owner.
-- Contact endpoint: /.netlify/functions/contact, routed through /api/contact. Configure RESEND_API_KEY and CONTACT_FROM_EMAIL in Netlify. Messages are sent to info@eyegooptical.com; sender address is used as reply-to. No success is shown unless Resend accepts the request.
-- Catalog contains 48 brand entries and owner-provided prices; prices appear below each brand in smaller type.
-- Public invoice help page, reviews page, and associated navigation/API are removed.
+- The contact form uses a mailto link to prepare a message to info@eyegooptical.com. The visitor’s email app must be configured, and the visitor must press Send. This is static-site behavior; server-side delivery requires a separate host or form provider.
+- Catalog contains 48 brand entries with prices removed.
+- Public invoice and reviews pages and their navigation are removed.
 
 ## Deployment
 
-Deploy this folder to Netlify and configure the two email environment variables to enable contact delivery.
+GitHub Actions publishes the root HTML, CSS, JavaScript, robots.txt, and sitemap.xml files when changes are pushed to `main`.
 
